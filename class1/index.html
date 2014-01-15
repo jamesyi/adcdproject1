@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Class 1</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+</body>
+<script>
+$(document).ready(function(){
+	$.get("server/user_view.php", {user:true}, function(data){
+		//do something
+		console.log(data);
+	});
+
+	$.get("server/user_view.php", {username:true}, function(data){
+		//do something
+		var names = $.parseJSON(data);
+		console.log(names);
+	});
+});
+</script>
+</html>
