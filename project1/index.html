@@ -6,37 +6,11 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 </head>
 <body>
-<input type='button' id='users' value='Get all users'/>
-<table id='display_table' border='1'>
-<tr>
-	<td align="center">User</td>
-	<td align="center">Description</td>
-	<td align="center">Avatar</td>
-</tr>
-</table>
+
 </body>
 <script>
 $(document).ready(function(){
-	$("#users").click(function(e){
-		$.get("server/user_client.php", {allusers:true}, function(data){
-			var users = $.parseJSON(data);
-			//console.log(data);
-			$.each(users, function(index){
-				var table_data = "<tr><td align='center'>"+
-					users[index]["username"]+"</td><td align='center'>"+
-					users[index]["description"]+"</td><td align='center'><img src='"+
-					users[index]["avatar"]+"' width='240' height='210'/></td></tr>";
-				$("#display_table").append(table_data);
-				//console.log(table_data);
-			});
-		});
-	});
-
-	/*$.get("server/user_client.php", {username:true}, function(data){
-		//do something
-		var names = $.parseJSON(data);
-		console.log(names);
-	});*/
+	
 });
 </script>
 </html>
