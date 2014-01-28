@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "root", "Project1");
+$con = mysqli_connect("localhost", "root", "root", "Cosplayer");
 
 if(mysqli_connect_error()){
 	//failed to connect
