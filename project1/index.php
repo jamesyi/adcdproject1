@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Project 1</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-</head>
-<body>
-
-</body>
-<script>
-$(document).ready(function(){
-	
-});
-</script>
-</html>
+<?php include("header.php"); ?>
+<?php
+if (isset($_GET["page"])) {
+	switch ($_GET["page"]) {
+		case "register":
+			include("registerPage.php");
+			break;
+		case "upload":
+			include("uploadPicturePage.php");
+			break;
+	}
+} else {
+	include("homePage.php");
+}
+?>
+<?php include("footer.php"); ?>
