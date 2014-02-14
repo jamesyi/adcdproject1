@@ -98,7 +98,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(32) NOT NULL COMMENT 'user''s name',
   `password` varchar(32) NOT NULL COMMENT 'user''s password',
-  `email` text COMMENT 'registered email',
+  `email` varchar(100) NOT NULL COMMENT 'registered email',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
