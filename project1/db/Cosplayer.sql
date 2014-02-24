@@ -47,32 +47,6 @@ CREATE TABLE `album_picture` (
   KEY `picture_id` (`picture_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
--- --------------------------------------------------------
-
---
--- Table structure for table `collaborators`
---
-
-CREATE TABLE `collaborators` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL COMMENT 'the name of collaborator',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `collaborator_album`
---
-
-CREATE TABLE `collaborator_album` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `collaborator_id` int(11) NOT NULL,
-  `album_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `collaborator_id` (`collaborator_id`),
-  KEY `album_id` (`album_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
