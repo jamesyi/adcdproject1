@@ -2,12 +2,23 @@
 include("connectDB.php");
 
 class Album_db {
+	private $id;
+	private $title;
+	
 	function __construct(){
 		global $con;
 		$this->connectDB = $con;
 	}
 	
-	function get_all_albums(){
+	function set_album_id($id){
+		$this->id = $id;
+	}
+	
+	function set_album_title($title){
+		$this->title = $title;
+	}
+	
+	function get_all_album(){
 		$query = "SELECT * FROM albums";
 		$result = mysqli_query($this->connectDB, $query);
 		
@@ -19,7 +30,7 @@ class Album_db {
 	}
 	
 	function get_album_by_id(){
-		$query = "SELECT * FROM albums WHERE id=".$this->album_id;
+		$query = "SELECT * FROM albums WHERE id=".$this->id;
 		$result = mysqli_query($this->connectDB, $query);
 		
 		$arr = array();
@@ -29,14 +40,12 @@ class Album_db {
 		return $arr;
 	}
 	
-	function set_album_id($id){
-		$this->album_id = $id;
+	function insert_new_album(){
+		$query = "INSERT INTO users (username, password, email) VALUES ( '".$this->username."', '".$this->password."', '".$this->email."')";
+		echo $query;
+		$result = mysqli_query($this->connectDB, $query);
 	}
+	
 }
-$albums = new album_db();
-$albums->set_album_id(1);
-$thealbum = $albums->get_album_by_id();
-echo "<pre>";
-var_dump($thealbum);
-echo "</pre>";
+
 ?>

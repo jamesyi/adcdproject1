@@ -2,9 +2,30 @@
 include("connectDB.php");
 
 class Picture_db {
+	private $id;
+	private $link;
+	private $title;
+	private $descr;
+	
 	function __construct(){
 		global $con;
 		$this->connectDB = $con;
+	}
+	
+	function set_picture_id($id){
+		$this->id = $id;
+	}
+	
+	function set_picture_link($link){
+		$this->link = $link;
+	}
+	
+	function set_picture_title($title){
+		$this->title = $title;
+	}
+	
+	function set_picture_descr($descr){
+		$this->descr = $descr;
 	}
 	
 	function get_all_pictures(){
@@ -19,7 +40,7 @@ class Picture_db {
 	}
 	
 	function get_picture_by_id(){
-		$query = "SELECT * FROM pictures WHERE id=".$this->picture_id;
+		$query = "SELECT * FROM pictures WHERE id=".$this->id;
 		$result = mysqli_query($this->connectDB, $query);
 		
 		$arr = array();
@@ -29,14 +50,11 @@ class Picture_db {
 		return $arr;
 	}
 	
-	function set_picture_id($id){
-		$this->picture_id = $id;
+	function insert_new_picture(){
+		$query = "INSERT INTO pictures (link, title, descr) VALUES ( '".$this->link."', '".$this->title."', '".$this->descr."')";
+		echo $query;
+		$result = mysqli_query($this->connectDB, $query);
 	}
 }
-$pictures = new picture_db();
-$pictures->set_picture_id(1);
-$thepicture = $pictures->get_picture_by_id();
-echo "<pre>";
-var_dump($thepicture);
-echo "</pre>";
+
 ?>

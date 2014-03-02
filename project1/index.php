@@ -8,6 +8,9 @@ if (isset($_GET["page"])) {
 		case "upload":
 			include("uploadPicturePage.php");
 			break;
+		case "login":
+			include("loginPage.php");
+			break;
 	}
 } else {
 	include("homePage.php");
