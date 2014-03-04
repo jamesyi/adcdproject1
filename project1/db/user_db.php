@@ -75,7 +75,6 @@ class User_db {
 	
 	function insert_new_user(){
 		$query = "INSERT INTO users (username, password, email) VALUES ( '".$this->username."', '".$this->password."', '".$this->email."')";
-		echo $query;
 		$result = mysqli_query($this->connectDB, $query);
 	}
 	

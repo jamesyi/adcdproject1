@@ -1,8 +1,10 @@
+<div id="copyright">&copy;2014 Leo Tse, James Yi, & Clark Yao</div>
 </body>
 <script>
 function logout(){
 	window.location="/project1/server/logout.php";
 }; 
+
 $(document).ready(function(){
 	$("#add_user").click(function(){
 		var username = $("#username").val();
@@ -25,7 +27,7 @@ $(document).ready(function(){
 		});
 	});
 
-	$.get("/server/session.php", {session:true}, function(data){
+	/* $.get("/server/session.php", {session:true}, function(data){
 		var session = $.parseJSON(data);
 		console.log(session['username']);
 		if(session['LoggedIn'] != true){
@@ -33,7 +35,8 @@ $(document).ready(function(){
 		} else {
 			$("#user_panel").text("Welcome! "+ session['username']);
 		}
-	}); 
+	});
+	*/ 
 
 });
 </script>

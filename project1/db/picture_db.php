@@ -52,7 +52,6 @@ class Picture_db {
 	
 	function insert_new_picture(){
 		$query = "INSERT INTO pictures (link, title, descr) VALUES ( '".$this->link."', '".$this->title."', '".$this->descr."')";
-		echo $query;
 		$result = mysqli_query($this->connectDB, $query);
 	}
 }

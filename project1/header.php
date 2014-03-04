@@ -9,19 +9,24 @@
 </head>
 <body>
 <div id="user_panel">
-<ul>
 <?php 
 	if (isset($_SESSION['username'])) { 
-		echo "<li id='user'>Welcome, ".$_SESSION['username']." (<a href='#' class='link' id='logout' onclick='logout();'>Log out</a>)</li>"; 
+		echo "<span>Welcome, ".$_SESSION['username']." 
+		<a href='#' id='accountOption'><img src='images/option.png' alt='account options' height='16' width='16'></a>
+		<ul>
+		<li><a href='/project1/index.php?page=userProfile' class='link'>Account Page</a></li>
+		<li><a href='#' class='link' id='logout' onclick='logout();'>Log out</a></span></li>
+		</ul>"; 
 	} else {
-		echo "<li><a href='/project1/index.php?page=login' class='link'>Login</a></li>
-			<li><a href='/project1/index.php?page=register' class='link'>Register</a></li>"; 
+		echo "<span><a href='/project1/index.php?page=login' class='link'>Login</a></span>
+			<span><a href='/project1/index.php?page=register' class='link'>Register</a></span>"; 
 	}			
 ?>
-</ul>
 </div>
+
 <div id="nav">
 	<ul>
-		<li><a href="/project1/index.php?page=upload" class="link">Upload</a></li>
+    	<li><a href="/project1/index.php?page=home" class="link">Home</a></li>
+		<li><a href="/project1/index.php?page=cosplayers" class="link">Cosplayers</a></li>
 	</ul>
 </div>
