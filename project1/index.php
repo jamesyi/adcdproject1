@@ -14,12 +14,16 @@ if (isset($_GET["page"])) {
 			include("cosplayersPage.php");
 			break;
 			
-		case "userProfile":
-			include("userProfilePage.php");
-			break;
-			
 		case "upload":
 			include("uploadPicturePage.php");
+			break;
+			
+		case "about":
+			include("aboutPage.php");
+			break;
+		
+		case "home":
+			include("homePage.php");
 			break;
 	}
 } else {
