@@ -1,21 +1,35 @@
 <?php
-include("../db/album_db.php");
+include_once ($_SERVER['DOCUMENT_ROOT']."/moretofu/db/album_db.php");
 
 class Album {
 	private $albumDB;
+	private $joined_album;
 	
 	function __construct(){
-		$this->albumDB = new album_db();
+		$this->albumDB = new Album_db();
+		$this->joined_album = new Joined_Album();
+	}
+	
+	function show_album_by_uid($uid){
+		$this->joined_album->set_uid($uid);
+		$albums = $this->joined_album->get_album_by_uid();
+		
+		return $albums;
 	}
 	
 	function insert_album($data){
 		$link  = isset($data['link']) ? $data['link'] : NULL;
 		$title = isset($data['title']) ? $data['title'] : NULL;
-		$descr  = isset($data['descr']) ? $data['descr'] : NULL;
+		$descr = isset($data['descr']) ? $data['descr'] : NULL;
 		$this->albumDB->set_album_title($title);
 		$this->albumDB->set_album_link($link);
 		$this->albumDB->set_album_descr($descr);
-		return $this->albumDB->insert_new_album();
+		$album_id = $this->albumDB->insert_new_album();
+		$user_id = isset($data['uid']) ? $data['uid'] : FALSE;
+		$this->joined_album->set_aid($album_id);
+		$this->joined_album->set_uid($user_id);
+		$this->joined_album->insert_user_album();
+		return $album_id;
 	}
 	
 	function update_album_link($id, $link){
@@ -26,12 +40,7 @@ class Album {
 	
 	function show_all_albums(){
 		$albums = $this->albumDB->get_all_albums();
-		if(!empty($albums)){
-			foreach ($albums as $album){
-				$user_albums = "<li><p><a href='#'><img src='".$album['link']."' class='user_imgs'/></a>".$album['title']."<br/>".$album['descr']."</p></li>";
-				echo $user_albums;
-			}
-		}
+		return $albums;
 	}
 	
 	function validate_img_type(){
@@ -56,4 +65,10 @@ $a = $db->insert_album($var);
 var_dump($a);
 */
 
+/*
+$db = new album();
+$uid = 3;
+$a = $db->show_album_by_uid($uid);
+var_dump($a);
+*/
 ?>

@@ -26,7 +26,9 @@ if (isset($_SESSION['username'])) {
 	</div>
 	<div id='dropdown_menu'>
 		<ul>
-			<li><a href='/moretofu/index.php?page=cosplayer_profile' class='link'>User Profile</a>
+			<li><a href='/moretofu/index.php?page=profile' class='link'>Profile</a>
+			</li>
+			<li><a href='/moretofu/index.php?page=albumCreation' class='link'>Create Album</a>
 			</li>
 			<li><a href='#' id='logout' onclick='logout();'>Log out</a>
 			</li>

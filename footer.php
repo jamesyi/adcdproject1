@@ -57,8 +57,26 @@ $(document).ready(function(){
 		});
 	});
 	
+	//show user's albums on albums creation page
+	$.get("data.php", {data:1}, function(data){
+		$("#user_album_list ul").html(data);
+		$(".userAlbum").click(function(){
+			var aid = $(this).attr("id");
+			var name = $(this).attr("rel");
+			window.location.replace("index.php?page=uploadImage&aid="+aid+"&albumName="+name);
+		});
+	});
 	
+	//show pictures of the album
+	$.get("data.php", {data:2, aid:$("#album_id").val()}, function(data){
+		$("#user_img_list ul").html(data);
+	});
 	
+	//show all albums on cosplayers page
+	$.get("data.php", {data:3}, function(data){
+		console.log(data);
+		$("#all_cosplayers_albums ul").html(data);
+	});
 
 });
 </script>

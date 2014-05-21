@@ -1,6 +1,6 @@
-<div id="create_album">
+<div id="album_creation_form">
 <h1>Create an album:</h1>
-<form action="server/album_client.php" method="post" enctype="multipart/form-data">
+<form action="../moretofu/server/album_client.php" method="post" enctype="multipart/form-data">
 
 Select an album cover image: <br/>
 
@@ -53,7 +53,7 @@ Album Description: <br/>
 
 <br/>
 <input name="user_session_id" id="user_session_id" type="hidden" value="<?php echo $_SESSION['user_id']; ?>"/>
-<input type="submit" name="Submit" value="Upload" id="upload_pic"/>
+<input type="submit" name="Submit" value="Upload" id="create_album"/>
 
 </form>
 </div>

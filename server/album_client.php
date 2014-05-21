@@ -10,33 +10,30 @@ error 6 = bot title & description are empty
 
 include('album.php');
 
-$album = new album();
+$album = new Album();
 $valid_type = $album->validate_img_type();
-echo $_FILES['picture']['tmp_name'];
-echo $_POST['title'];
-echo $_POST['descr'];
 
 if (empty($_POST['title']) && empty($_POST['descr']) && empty($_FILES['picture']['tmp_name'])) {
 
-	header("location: ../index.php?page=cosplayer_profile&error=1");
+	header("location: ../index.php?page=albumCreation&error=1");
 
 	exit();	
 
 } else if (empty($_POST['title']) && !empty($_POST['descr']) && !empty($_FILES['picture']['tmp_name'])){
 	
-	header("location: ../index.php?page=cosplayer_profile&error=2&descr=".$_POST['descr']);
+	header("location: ../index.php?page=albumCreation&error=2&descr=".$_POST['descr']);
 
 	exit();
 	
 } else if (!empty($_POST['title']) && empty($_POST['descr']) && !empty($_FILES['picture']['tmp_name'])){
 	
-	header("location: ../index.php?page=cosplayer_profile&error=3&title=".$_POST['title']);
+	header("location: ../index.php?page=albumCreation&error=3&title=".$_POST['title']);
 
 	exit();
 	
 } else if (!empty($_POST['title']) && !empty($_POST['descr']) && empty($_FILES['picture']['tmp_name'])){
 	
-	header("location: ../index.php?page=cosplayer_profile&error=4&title=".$_POST['title']."&descr=".$_POST['descr']);
+	header("location: ../index.php?page=albumCreation&error=4&title=".$_POST['title']."&descr=".$_POST['descr']);
 
 	exit();
 	
@@ -48,6 +45,7 @@ if (empty($_POST['title']) && empty($_POST['descr']) && empty($_FILES['picture']
 		"title" => $_POST['title'],
 		"descr" => $_POST['descr'],
 		"link" => NULL, 
+		"uid" => $_POST['user_session_id'],
 	);
 	
 	$id = $album->insert_album($var);
@@ -74,18 +72,18 @@ if (empty($_POST['title']) && empty($_POST['descr']) && empty($_FILES['picture']
 	
 	$album->update_album_link($id, $link);
 	
-	header("location: ../index.php?page=cosplayer_profile&success=true");
+	header("location: ../index.php?page=albumCreation&success=true");
 
 	exit();					
 
 } else if ((($valid_type == 1) && ($_FILES['picture']['size'] < 5000000) && empty($_POST['title']) && empty($_POST['descr']))) {
-	echo "lolol";
-	header("location: ../index.php?page=cosplayer_profile&error=5");
+	
+	header("location: ../index.php?page=albumCreation&error=5");
 
 	exit();	
 } else if (($valid_type == 0) || ($_FILES['picture']['size'] > 5000000)){
-	echo "lolol";
-	header("location: ../index.php?page=cosplayer_profile&error=6");
+	
+	header("location: ../index.php?page=albumCreation&error=6");
 
 	exit();	
 }

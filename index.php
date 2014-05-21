@@ -3,35 +3,43 @@
 if (isset($_GET["page"])) {
 	switch ($_GET["page"]) {
 		case "register":
-			include("registerPage.php");
+			include("pages/registerPage.php");
 			break;
 			
 		case "login":
-			include("loginPage.php");
+			include("pages/loginPage.php");
 			break;
 			
 		case "cosplayers":
-			include("cosplayersPage.php");
+			include("pages/cosplayersPage.php");
 			break;
 			
-		case "cosplayer_profile":
-			include("cosplayer_profilePage.php");
+		case "profile":
+			include("pages/profileSettingsPage.php");
+		break;
+		
+		case "albumCreation":
+			include("pages/albumCreationPage.php");
+		break;
+		
+		case "uploadImage":
+			include("pages/uploadImagePage.php");
 		break;
 			
 		case "userProfile":
-			include("profilePage.php");
+			include("pages/profilePage.php");
 			break;
 			
 		case "about":
-			include("aboutPage.php");
+			include("pages/aboutPage.php");
 			break;
 		
 		case "home":
-			include("homePage.php");
+			include("pages/homePage.php");
 			break;
 	}
 } else {
-	include("homePage.php");
+	include("pages/homePage.php");
 }
 ?>
 <?php include("footer.php"); ?>

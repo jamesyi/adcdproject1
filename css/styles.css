@@ -469,30 +469,19 @@ textarea{
 }
 
 /* user albums */
-#user_profle{
-	width:30%;
-	float:left;
-}
-
 .profile_img{
 	width:200px;
 	height:200px;
 }
 
-#album_list{
+#user_album_list{
 	width:70%;
-	float:right;
+	position:absolute;
+	top:0;
+	right:0;
 }
 
-#album_list ul{
-	list-style:none;
-}
-
-#album_list ul li{
-	display:inline-block;
-}
-
-#album_list ul li a img{
+#user_album_list ul li a img{
 	width:200px;
 	height:200px;
 }

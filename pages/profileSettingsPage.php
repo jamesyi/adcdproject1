@@ -9,6 +9,12 @@ if(empty($_SESSION['username'])){
 	
 	exit();
 }
+
 ?>
 
-<?php include("create_albumPage.php");?>
+<div id='user_profile'>
+	<img src='images/4-2.jpg' class='profile_img' />
+    <br/>Name: Doge
+    <br/>Birthday: Everyday
+    <br/>Hobby: More Tofu
+</div>
