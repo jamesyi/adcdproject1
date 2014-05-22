@@ -42,9 +42,8 @@ $(document).ready(function(){
 		var username = $("#username").val();
 		var password = $("#password").val();
 		var email = $("#email").val();
-		console.log(username, password, email);
-		$.post("server/user_client.php", {username:username, password:password, email:email}, function(data){
-			//console.log(data);
+		$.post("server/user_client.php", {mode:1, username:username, password:password, email:email}, function(data){
+			console.log(data);
 			window.location.replace("index.php");
 		});
 	});
@@ -52,18 +51,25 @@ $(document).ready(function(){
 	$("#login_user").click(function(){
 		var username = $("#username").val();
 		var password = $("#password").val();
-		console.log(username, password);
-		$.post("server/user_client.php", {username:username, password:password}, function(data){
-			console.log(data);	
+		$.post("server/user_client.php", {mode:2, username:username, password:password}, function(data){
+			//console.log(data);	
 			var user1 = $.parseJSON(data);
 			window.location.replace("index.php");
+		});
+	});
+	
+	$("#edit_user").click(function(){
+		$.post("server/user_client.php", {mode:3, new_password:$("#new-password").val(), password:$("#old-password").val(), email:$("#user-email").val()}, function(data){
+			//console.log(data);	
+			var user1 = $.parseJSON(data);
+			window.location.replace("index.php?page=profile?success=true");
 		});
 	});
 	
 	//show user's albums on albums creation page
 	$.get("data.php", {data:1}, function(data){
 		$("#user_album_list").html(data);
-		console.log(data);
+		//console.log(data);
 		$(".caption").click(function(){
 			var aid = $(this).attr("id");
 			var name = $(this).attr("rel");
@@ -91,6 +97,7 @@ $(document).ready(function(){
 		$("#all_cosplayers_albums").html(data);
 	});
 	
+	//show user info
 	$.get("data.php", {data:4}, function(data){
 		//console.log(data);
 		$("#user_profile").html(data);

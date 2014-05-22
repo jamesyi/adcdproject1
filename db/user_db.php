@@ -6,6 +6,7 @@ class User_db {
 	private $email;
 	private $username;
 	private $password;
+	private $new_password;
 	private $link;
 	
 	function __construct(){
@@ -26,7 +27,13 @@ class User_db {
 	}
 	
 	function set_user_password($password){
-		$this->password = $password;	
+		$this->password = md5($password);	
+	}
+	
+	function set_new_password($new_password){
+		if(!empty($new_password)){
+			$this->new_password = md5($new_password);
+		}
 	}
 	
 	function set_user_link($link){
@@ -50,7 +57,7 @@ class User_db {
 		
 		$arr = array();
 		while ($row = mysqli_fetch_array($result)){
-			$arr[$row["id"]] = $row;
+			$arr = $row;
 		}
 		return $arr;
 	}
@@ -79,9 +86,44 @@ class User_db {
 		return $arr;
 	} 
 	
+	function get_user_by_id_and_password(){
+		$query = "SELECT * FROM user WHERE id='".$this->id."' AND password='".$this->password."'";
+		$result = mysqli_query($this->connectDB, $query);
+		if ($result){
+			$row = mysqli_fetch_array($result);
+			if(!empty($row)){
+				return true;
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+	
 	function insert_new_user(){
 		$query = "INSERT INTO users (username, password, email) VALUES ( '".$this->username."', '".$this->password."', '".$this->email."')";
 		$result = mysqli_query($this->connectDB, $query);
+		if ($result) {
+			return mysqli_insert_id($this->connectDB);
+		} else {
+			return false;
+		}
+	}
+	
+	function update_user(){
+		$password = (isset($this->new_password)) ? "password='".$this->new_password."', " : "";
+		$email = (isset($this->email)) ? "email='".$this->email."', " : "";
+		
+		$query  = "UPDATE user SET ".$password.$email;
+		$query = rtrim($query, " ");
+		$query = rtrim($query, ",");
+		$query .= " WHERE id='".$this->id."'";
+		$result = mysqli_query($this->connectDB, $query);
+		if($result){
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 }

@@ -13,7 +13,6 @@ if(isset($_GET['data'])){
 	switch ($_GET['data']){
 		case 1: //list all user's albums for album creation page
 			$uid = $_SESSION['user_id'];
-			echo $uid;
 			$album_covers = $album->show_album_by_uid($uid);
 			
 			foreach ($album_covers as $a){
@@ -61,15 +60,15 @@ if(isset($_GET['data'])){
 			}
 		break;
 		
-		case 4:
+		case 4: //sending user info to user profile page
 			$uid = $_SESSION['user_id'];
 			$userinfo = $user->show_user_by_id($uid);
-			foreach ($userinfo as $u){
-				$link = $u['link'];
-				$username = $u['username'];
-				$email = $u['email'];
+			
+			if($userinfo){
+				$link = $userinfo['link'];
+				$username = $userinfo['username'];
+				$email = $userinfo['email'];
 				echo "
-					<img/><br/>
 					Name: ".$username."<br/>
 					Email: ".$email."
 				";
