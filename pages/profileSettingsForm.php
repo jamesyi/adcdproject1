@@ -8,4 +8,5 @@
     <br/>
 	<input type='password' placeholder='New Password' id='new-password'/>
     <br/>
+    <input type="hidden" id="user_id" value="<?php echo $_SESSION['user_id']?>">
     <input type="button" name="Submit" value="Edit" id="edit-user"/>
