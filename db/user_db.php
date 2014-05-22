@@ -50,7 +50,7 @@ class User_db {
 		
 		$arr = array();
 		while ($row = mysqli_fetch_array($result)){
-			$arr[] = $row;
+			$arr[$row["id"]] = $row;
 		}
 		return $arr;
 	}
@@ -77,6 +77,19 @@ class User_db {
 		}
 		return $name;
 	} 
+	
+	function get_user_id(){
+		$query = "SELECT * FROM users";
+		
+		$result = mysqli_query($this->connectDB, $query);
+		
+		$arr = array();
+		$id = "";
+		while ($row = mysqli_fetch_array($result)){
+			$id = $row['id'];	
+		}
+		return $id;
+	}
 	
 	function insert_new_user(){
 		$query = "INSERT INTO users (username, password, email) VALUES ( '".$this->username."', '".$this->password."', '".$this->email."')";

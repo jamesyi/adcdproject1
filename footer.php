@@ -53,9 +53,9 @@ $(document).ready(function(){
 	$("#login_user").click(function(){
 		var username = $("#username").val();
 		var password = $("#password").val();
-		//console.log(username, password);
+		console.log(username, password);
 		$.post("server/user_client.php", {username:username, password:password}, function(data){
-			//console.log(data);	
+			console.log(data);	
 			var user1 = $.parseJSON(data);
 			window.location.replace("index.php");
 		});
@@ -83,7 +83,7 @@ $(document).ready(function(){
 	});
 	
 	$.get("data.php", {data:4}, function(data){
-		console.log(data);
+		//console.log(data);
 		$("#user_profile").html(data);
 	});
 
