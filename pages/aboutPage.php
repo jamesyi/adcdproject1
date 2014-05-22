@@ -8,15 +8,6 @@
         <p>
         	We are Team Ninjas! 
         </p>
-        <h1>&copy;2014 James Yi, Leo Tse, Clark Yao</h1>
+        <h1>&copy;2014 <a href="http://jayi.co/" target="_blank">James Yi</a>, <a href="http://tsetszfai-leo.com/" target="_blank">Leo Tse</a>, <a href="http://cyaodesign.com/" target="_blank">Clark Yao</a></h1>
   	</div>
-    
-	<div class="circle-wrap">
-            
-    	<div class="wrap2">
-        	<div id="cir1"></div>
-            <div id="cir2"></div>
-            <div id="cir3"></div>
-        </div>
-           
-    </div>
+</div>
