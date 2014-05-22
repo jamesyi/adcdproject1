@@ -115,6 +115,23 @@ $(document).ready(function(){
 	$.get("data.php", {data:3}, function(data){
 		//console.log(data);
 		$("#all_cosplayers_albums").html(data);
+		
+		//click to get all pics belongs to the album
+		$(".caption").click(function(){
+			var aid = $(this).attr("id");
+			$.get("data.php", {data:2, aid:aid}, function(data){
+				$("#content").html(data);
+				$("[rel='tooltip']").tooltip();    
+			
+				$('.thumbnail').hover(function(){
+						$(this).find('.caption').stop().fadeIn(180); //.fadeIn(250)
+					}, function(){
+						$(this).find('.caption').stop().fadeOut(180); //.fadeOut(205)
+					}
+				); 
+			});
+		});
+		
 		$("[rel='tooltip']").tooltip();    
  	
 		$('.thumbnail').hover(function(){
@@ -155,12 +172,74 @@ $(document).ready(function(){
 				console.log(results);
 				var row = "<h1>Search Result</h1><br/><table class='search-result-table' border='0' cellspacing='0'>";
 				for (key in results){
-					if(results[key]['username'] === "username" && results[key]['link'] === "link"){
-						
+					
+					if(results[key]['username'] === "username" && results[key]['email'] === "email"){
+						//displaying pictures
+						row = row + "<tr id="+results[key]['id']+" class='searched-pic'><td id='td1'><span>"+results[key]['title']+"</span></td><td id='td2'>"+results[key]['descr']+"</td><td id='td3'><img src='"+results[key]['link']+"'/></td></tr>";
+					} else if(results[key]['title'] === "" && results[key]['descr'] === "" && results[key]['link'] === ""){
+						//displaying user
+						row = row + "<tr id='"+results[key]['id']+"' class='searched-user'><td id='td1'><span>"+results[key]['username']+"</span></td><td id='td2'></td><td id='td3'>"+results[key]['email']+"</td></tr>";
+					} else if(results[key]['username'] === "" && results[key]['email'] === ""){
+					
+						//displaying album
+						row = row + "<tr id='"+results[key]['id']+"' class='searched-album'><td id='td1'><span>"+results[key]['title']+"</span></td><td id='td2'>"+results[key]['descr']+"</td><td id='td3'><img src='"+results[key]['link']+"'/></td></tr>";
 					}
-			}
+				}
 				var table = row + "</table>";
 				$("#content").html(table);
+				
+				//go to user's profile with albums
+				$(".searched-user").click(function(){ 
+					var uid = $(this).attr("id");
+					$.get("data.php", {data:5, uid:uid}, function(data){
+						//console.log(data);
+						$("#content").html(data);
+						$("[rel='tooltip']").tooltip();    
+						
+						$('.thumbnail').hover(function(){
+								$(this).find('.caption').stop().fadeIn(180); //.fadeIn(250)
+							}, function(){
+								$(this).find('.caption').stop().fadeOut(180); //.fadeOut(205)
+							}
+						); 
+					});
+				});
+				
+				//go to the album
+				$(".searched-album").click(function(){ 
+					var aid = $(this).attr("id");
+					$.get("data.php", {data:6, aid:aid}, function(data){
+						//console.log(data);
+						$("#content").html(data);
+						//click to get all pics belongs to the album
+						$("[rel='tooltip']").tooltip();    
+						
+						$('.thumbnail').hover(function(){
+								$(this).find('.caption').stop().fadeIn(180); //.fadeIn(250)
+							}, function(){
+								$(this).find('.caption').stop().fadeOut(180); //.fadeOut(205)
+							}
+						); 
+					});
+				});
+				
+				//go to the picture
+				$(".searched-pic").click(function(){ 
+					var pid = $(this).attr("id");
+					$.get("data.php", {data:7, pid:pid}, function(data){
+						//console.log(data);
+						$("#content").html(data);
+						
+						$("[rel='tooltip']").tooltip();    
+						
+						$('.thumbnail').hover(function(){
+								$(this).find('.caption').stop().fadeIn(180); //.fadeIn(250)
+							}, function(){
+								$(this).find('.caption').stop().fadeOut(180); //.fadeOut(205)
+							}
+						); 
+					});
+				});
 				
 			});
 		}

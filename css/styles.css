@@ -618,3 +618,55 @@ body{
 #search-field{
 	width:200px;
 }
+
+#td1{
+	width:15%;
+}
+
+#td2{
+	width:80%;
+}
+
+.search-result-table tr #td1, .search-result-table tr #td2{
+	text-align:left;
+	padding:20px;
+}
+
+.search-result-table tr #td3{
+	text-align:right;
+	padding:20px;
+}
+
+.search-result-table tr #td3 img{
+	width:100px;
+	height:100px;
+}
+
+.searched-album, .searched-pic, .searched-user{
+	cursor:pointer;
+	height:140px;
+}
+
+.searched-album{
+	background: rgba(51,251,251,0.5);
+}
+
+.searched-pic{
+	background: rgba(251,81,251,0.5);
+}
+
+.searched-user{
+	background: rgba(251,251,61,0.5);
+}
+
+.searched-album:hover{
+	background: rgba(251,81,251,0.5);
+}
+
+.searched-pic:hover{
+	background: rgba(251,251,61,0.5);
+}
+
+.searched-user:hover{
+	background: rgba(51,251,251,0.5);
+}

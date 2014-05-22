@@ -45,7 +45,7 @@ class Picture_db {
 		
 		$arr = array();
 		while ($row = mysqli_fetch_array($result)){
-			$arr[$row["id"]] = $row;
+			$arr = $row;
 		}
 		return $arr;
 	}
