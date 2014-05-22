@@ -20,11 +20,11 @@ if (isset($_GET['success']) && ($_GET['success'] == true)){
 }
 ?>
 
-<div class="col-md-3 pull-left image-creation-style" id="img_upload_form">
+<div class="col-md-3 image-creation-style" id="img_upload_form">
 <?php include("imageUploadForm.php");?>
 </div>
 
-<div class="col-md-9 pull-right" style="padding:0;">
+<div class="col-md-9" style="padding:0;">
     <div class="container-fluid work-container">
         <div class="row" id="user_img_list">
         

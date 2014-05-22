@@ -17,11 +17,11 @@ if (isset($_GET['success']) && ($_GET['success'] == true)){
 }
 ?>
 
-<div class="col-md-3 pull-left album-creation-style" id="album_creation_form">
+<div class="col-md-3 album-creation-style" id="album_creation_form">
 <?php include("albumCreationForm.php");?>
 </div>
 
-<div class="col-lg-9 pull-right" style="padding:0;">
+<div class="col-lg-9" style="padding:0;">
     <div class="container-fluid work-container">
         <div class="row" id="user_album_list">
         

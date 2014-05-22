@@ -1,3 +1,4 @@
+</div>
 <div class="footer">
 	<ul class="selection">
 		<li>

@@ -51,3 +51,4 @@ if (isset($_SESSION['username'])) {
 ?>  
 		</div>
 	</div>
+    <div id="content">
