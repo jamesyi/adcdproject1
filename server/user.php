@@ -34,4 +34,10 @@ class User {
 		return $this->userDB->get_user_by_id();
 	}
 }
+
+/*
+$db = new User();
+$a = $db->show_user_by_id(3);
+var_dump($a);
+*/
 ?>

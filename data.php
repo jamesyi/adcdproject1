@@ -63,6 +63,22 @@ if(isset($_GET['data'])){
 		case 4:
 			$uid = $_SESSION['user_id'];
 			$userinfo = $user->show_user_by_id($uid);
+			$link = "";
+			$username = "";
+			$email = "";
+			foreach ($userinfo as $u){
+				$link = $u['link'];
+				$username = $u['username'];
+				$email = $u['email'];
+			}
+			
+			echo "
+			<div>
+				<img src='".$link."'/><br/>
+				Name: ".$username." <br/>
+				Email: ".$email."
+			</div>	
+			";
 		break;
 	}
 }

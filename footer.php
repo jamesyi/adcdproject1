@@ -82,6 +82,7 @@ $(document).ready(function(){
 		$("#all_cosplayers_albums").html(data);
 	});
 	
+	//display user info
 	$.get("data.php", {data:4}, function(data){
 		//console.log(data);
 		$("#user_profile").html(data);

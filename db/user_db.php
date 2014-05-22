@@ -50,7 +50,7 @@ class User_db {
 		
 		$arr = array();
 		while ($row = mysqli_fetch_array($result)){
-			$arr[$row["id"]] = $row;
+			$arr[] = $row;
 		}
 		return $arr;
 	}
@@ -98,4 +98,10 @@ class User_db {
 	
 }
 
+/*
+$db = new User_db();
+$db->set_user_id(3);
+$a = $db->get_user_by_id();
+var_dump($a);
+*/
 ?>
