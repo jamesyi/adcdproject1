@@ -95,7 +95,7 @@ class Joined_Picture{
 	}
 	
 	function get_picture_by_aid(){
-		$query  = "SELECT albums.id AS album_id , pictures.id AS picture_id, pictures.title, pictures.descr, pictures.link FROM pictures 
+		$query  = "SELECT albums.id AS album_id, pictures.id AS picture_id, pictures.title, pictures.descr, pictures.link FROM pictures 
 			LEFT JOIN album_picture ON (pictures.id=album_picture.picture_id) 
 			LEFT JOIN albums ON (albums.id=album_picture.album_id) 		
 			WHERE albums.id=".$this->aid;

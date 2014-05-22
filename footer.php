@@ -9,8 +9,13 @@
 		<li>
         	<a href="/moretofu/index.php?page=about" class="link">About</a>
         </li>
+        <li>
+        	<div id="search-box">
+                <input type='text' placeholder='Search...' id='search-field'/>
+                <img class='search-icon' src='images/search-icon.png' title='search'/>
+            </div>
+        </li>
 	</ul>
-    <h1 class="developer-names">&copy;2014 James Yi, Leo Tse, Clark Yao</h1>
 </div>
 
 </body>
@@ -58,11 +63,17 @@ $(document).ready(function(){
 		});
 	});
 	
-	$("#edit_user").click(function(){
-		$.post("server/user_client.php", {mode:3, new_password:$("#new-password").val(), password:$("#old-password").val(), email:$("#user-email").val()}, function(data){
-			//console.log(data);	
-			var user1 = $.parseJSON(data);
-			window.location.replace("index.php?page=profile?success=true");
+	$("#edit-user").click(function(){
+		$.post("server/user_client.php", {mode:3, id:$("#user_id").val(), new_password:$("#new-password").val(), password:$("#old-password").val(), email:$("#user-email").val()}, function(data){
+			var result = data;
+			console.log(data);
+			if(result == "success"){
+				window.location.replace("index.php?page=profile&success=t");
+			} else if(result == "fail"){
+				window.location.replace("index.php?page=profile&success=f");
+			} else if(result == "empty"){
+				window.location.replace("index.php?page=profile&success=e");
+			}
 		});
 	});
 	
@@ -118,7 +129,41 @@ $(document).ready(function(){
 		//console.log(data);
 		$("#user_profile").html(data);
 	});
-
+	
+	//search icon
+	$("#search-field").hide();
+	$(".search-icon").click(function(){
+		$(".search-icon").hide();
+		$("#search-field").show();
+	});
+	
+	$(document).mouseup(function (e){
+		if (!$("#search-field").is(e.target) 
+			&& $("#search-field").has(e.target).length === 0){
+			$("#search-field").hide();
+			$(".search-icon").show();
+		}
+	});
+	
+	$('#search-field').keypress(function(event){
+		var keycode = (event.keyCode ? event.keyCode : event.which);
+			if(keycode == '13'){
+				$.get("server/search_client.php",{keyword:$("#search-field").val()}, function(data){
+				//console.log(data);
+				var results = $.parseJSON(data);
+				console.log(results);
+				var row = "<h1>Search Result</h1><br/><table class='search-result-table' border='0' cellspacing='0'>";
+				for (key in results){
+					if(results[key]['username'] === "username" && results[key]['link'] === "link"){
+						
+					}
+			}
+				var table = row + "</table>";
+				$("body").html(table);
+				
+			});
+		}
+	});
 });
 </script>
 </html>

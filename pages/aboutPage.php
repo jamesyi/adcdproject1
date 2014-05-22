@@ -8,8 +8,9 @@
         <p>
         	We are Team Ninjas! 
         </p>
+        <h1>&copy;2014 James Yi, Leo Tse, Clark Yao</h1>
   	</div>
-            
+    
 	<div class="circle-wrap">
             
     	<div class="wrap2">

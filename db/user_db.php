@@ -30,7 +30,7 @@ class User_db {
 		$this->password = md5($password);	
 	}
 	
-	function set_new_password($new_password){
+	function set_user_new_password($new_password){
 		if(!empty($new_password)){
 			$this->new_password = md5($new_password);
 		}
@@ -87,7 +87,7 @@ class User_db {
 	} 
 	
 	function get_user_by_id_and_password(){
-		$query = "SELECT * FROM user WHERE id='".$this->id."' AND password='".$this->password."'";
+		$query = "SELECT * FROM users WHERE id='".$this->id."' AND password='".$this->password."'";
 		$result = mysqli_query($this->connectDB, $query);
 		if ($result){
 			$row = mysqli_fetch_array($result);
@@ -114,7 +114,7 @@ class User_db {
 		$password = (isset($this->new_password)) ? "password='".$this->new_password."', " : "";
 		$email = (isset($this->email)) ? "email='".$this->email."', " : "";
 		
-		$query  = "UPDATE user SET ".$password.$email;
+		$query  = "UPDATE users SET ".$password.$email;
 		$query = rtrim($query, " ");
 		$query = rtrim($query, ",");
 		$query .= " WHERE id='".$this->id."'";
@@ -127,5 +127,12 @@ class User_db {
 	}
 	
 }
-
+/*
+$db = new User_db();
+$db->set_user_new_password("2222");
+$db->set_user_id(3);
+$db->set_user_email("gggggg");
+$a = $db->update_user();
+var_dump($a);
+*/
 ?>
