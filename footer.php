@@ -101,6 +101,7 @@ $(document).ready(function(){
 	//show pictures of the album
 	$.get("data.php", {data:2, aid:$("#album_id").val()}, function(data){
 		$("#user_img_list").html(data);
+		
 		$("[rel='tooltip']").tooltip();    
  	
 		$('.thumbnail').hover(function(){
@@ -116,21 +117,6 @@ $(document).ready(function(){
 		//console.log(data);
 		$("#all_cosplayers_albums").html(data);
 		
-		//click to get all pics belongs to the album
-		$(".caption").click(function(){
-			var aid = $(this).attr("id");
-			$.get("data.php", {data:2, aid:aid}, function(data){
-				$("#content").html(data);
-				$("[rel='tooltip']").tooltip();    
-			
-				$('.thumbnail').hover(function(){
-						$(this).find('.caption').stop().fadeIn(180); //.fadeIn(250)
-					}, function(){
-						$(this).find('.caption').stop().fadeOut(180); //.fadeOut(205)
-					}
-				); 
-			});
-		});
 		
 		$("[rel='tooltip']").tooltip();    
  	
