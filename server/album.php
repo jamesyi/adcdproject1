@@ -1,5 +1,5 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/moretofu/db/album_db.php");
+include_once ($_SERVER['DOCUMENT_ROOT']."/git/adcdproject1/db/album_db.php");
 
 class Album {
 	private $albumDB;

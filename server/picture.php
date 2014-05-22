@@ -1,5 +1,5 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/moretofu/db/picture_db.php");
+include_once ($_SERVER['DOCUMENT_ROOT']."/git/adcdproject1/db/picture_db.php");
 
 class Picture {
 	private $pictureDB;

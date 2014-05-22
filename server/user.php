@@ -1,5 +1,5 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/moretofu/db/user_db.php");
+include_once ($_SERVER['DOCUMENT_ROOT']."/git/adcdproject1/db/user_db.php");
 
 class User {
 	private $userDB;

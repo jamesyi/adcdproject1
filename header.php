@@ -29,9 +29,9 @@ if (isset($_SESSION['username'])) {
 	</div>
 	<div id='dropdown_menu'>
 		<ul>
-			<li><a href='/moretofu/index.php?page=profile' class='link'>Profile</a>
+			<li><a href='/git/adcdproject1/index.php?page=profile' class='link'>Profile</a>
 			</li>
-			<li><a href='/moretofu/index.php?page=albumCreation' class='link'>Create Album</a>
+			<li><a href='/git/adcdproject1/index.php?page=albumCreation' class='link'>Create Album</a>
 			</li>
 			<li><a href='#' id='logout' onclick='logout();'>Log out</a>
 			</li>
@@ -42,8 +42,8 @@ if (isset($_SESSION['username'])) {
 		echo "
 		<div id='user_section'>
 			<ul>
-				<li><a href='/moretofu/index.php?page=login'>Login</a></li>
-				<li><a href='/moretofu/index.php?page=register'>Register</a></li>
+				<li><a href='/git/adcdproject1/index.php?page=login'>Login</a></li>
+				<li><a href='/git/adcdproject1/index.php?page=register'>Register</a></li>
 			</ul>
 		</div>	
 		"; 

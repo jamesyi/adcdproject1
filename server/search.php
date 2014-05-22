@@ -1,5 +1,5 @@
 <?php
-include_once ($_SERVER['DOCUMENT_ROOT']."/moretofu/db/search_db.php");
+include_once ($_SERVER['DOCUMENT_ROOT']."/git/adcdproject1/db/search_db.php");
 class Search{
 	private $searchDB;
 	

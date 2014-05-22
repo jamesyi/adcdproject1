@@ -1,7 +1,7 @@
 
 
 <h1>Create an album:</h1>
-<form action="../moretofu/server/album_client.php" method="post" enctype="multipart/form-data">
+<form action="../adcdproject1/server/album_client.php" method="post" enctype="multipart/form-data">
 
 <p style="font-size:1.3em;">Select an album cover image:</p><br/>
 

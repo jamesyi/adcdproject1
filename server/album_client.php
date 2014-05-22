@@ -49,7 +49,6 @@ if (empty($_POST['title']) && empty($_POST['descr']) && empty($_FILES['picture']
 	);
 	
 	$id = $album->insert_album($var);
-	
 	$filename  = basename($_FILES['picture']['name']);
 	$extension = pathinfo($filename, PATHINFO_EXTENSION);
 	$new_filename = $id.".".$extension;

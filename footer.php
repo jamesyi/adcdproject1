@@ -2,13 +2,13 @@
 <div class="footer">
 	<ul class="selection">
 		<li>
-        	<a href="/moretofu/index.php?page=home" class="link">Home</a>
+        	<a href="/git/adcdproject1/index.php?page=home" class="link">Home</a>
         </li>
 		<li>
-        	<a href="/moretofu/index.php?page=cosplayers" class="link">Cosplayers</a>
+        	<a href="/git/adcdproject1/index.php?page=cosplayers" class="link">Cosplayers</a>
         </li>
 		<li>
-        	<a href="/moretofu/index.php?page=about" class="link">About</a>
+        	<a href="/git/adcdproject1/index.php?page=about" class="link">About</a>
         </li>
         <li>
         	<div id="search-box">
@@ -24,7 +24,7 @@
 <script src="js/docs.min.js"></script>
 <script>
 function logout(){
-	window.location="/moretofu/server/logout.php";
+	window.location="/git/adcdproject1/server/logout.php";
 }; 
 
 function show_option(){

@@ -1,7 +1,7 @@
 <div style="font-size:1.5em;padding:10px;"><a href="index.php?page=albumCreation" ><span class="glyphicon glyphicon-chevron-left"></span> Back to Album Creation</a></div>
 
 <?php 
-	include("../moretofu/server/album.php");
+	include("../adcdproject1/server/album.php");
 	$db = new Album();
 	$albuminfo = $db->show_album_by_id($_GET['aid']);
 	foreach($albuminfo as $ai){
@@ -13,7 +13,7 @@
 
 
 <h1 style="font-size:2em;" ><?php echo $_GET['albumName'];?></h1>
-<form action="../moretofu/server/picture_client.php" method="post" enctype="multipart/form-data">
+<form action="../adcdproject1/server/picture_client.php" method="post" enctype="multipart/form-data">
 
 
 
