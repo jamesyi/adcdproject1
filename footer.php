@@ -160,7 +160,7 @@ $(document).ready(function(){
 					}
 			}
 				var table = row + "</table>";
-				$("body").html(table);
+				$("#content").html(table);
 				
 			});
 		}
