@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost", "root", "root", "moretofu");
+$con = mysqli_connect("localhost", "root", "", "moretofu");
 
 if(mysqli_connect_error()){
 	//failed to connect

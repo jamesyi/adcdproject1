@@ -13,6 +13,7 @@ if(isset($_GET['data'])){
 	switch ($_GET['data']){
 		case 1: //list all user's albums for album creation page
 			$uid = $_SESSION['user_id'];
+			echo $uid;
 			$album_covers = $album->show_album_by_uid($uid);
 			
 			foreach ($album_covers as $a){
@@ -23,13 +24,13 @@ if(isset($_GET['data'])){
 				echo "
 				<div class='col-md-3 custom-md-3' >
 					<div class='thumbnail'>
-						<div class='caption'>
-							<a href='#'><span class='span-custom'>".$title."<br/><span style='color:#E64C66;'>".$descr."</span></span></a>
+						<div class='caption' id='".$id."' rel='".$title."'>
+							<a href='#'><span class='span-custom'>".$title."<br/><span style='color:#E64C66; font-size:0.8em;'>".$descr."</span></span></a>
 							
 						</div>
 					
 					
-						<img class='works-image' src='".$link."' width='350' height='350' id='".$id."' class='userAlbum' rel='".$title."'/>
+						<img class='works-image' src='".$link."' width='350' height='350' />
 					</div>
 				</div>
 				";
@@ -45,7 +46,7 @@ if(isset($_GET['data'])){
 				$id = $p['picture_id'];
 				$descr = $p['descr'];
 				$title = $p['title'];
-				echo "<div><img src='".$link."' width='350' height='350' id='".$id."' class='albumPicture' rel='".$title."'/><br/>".$title." ".$descr."</div>";
+				echo "<div><img src='".$link."'  width='350' height='350' id='".$id."' class='albumPicture' rel='".$title."'/><br/>".$title." ".$descr."</div>";
 			}
 		break;
 		
@@ -56,29 +57,13 @@ if(isset($_GET['data'])){
 				$id = $a['id'];
 				$descr = $a['descr'];
 				$title = $a['title'];
-				echo "<div><img src='".$link."' width='350' height='350' id='".$id."' class='cosplayAlbums' rel='".$title."'/><br/>".$title." ".$descr."</div>";
+				echo "<div><img src='".$link."' style='width:350px;height:350px;'  id='".$id."' class='cosplayAlbums' rel='".$title."'/><br/>".$title." ".$descr."</div>";
 			}
 		break;
 		
 		case 4:
 			$uid = $_SESSION['user_id'];
 			$userinfo = $user->show_user_by_id($uid);
-			$link = "";
-			$username = "";
-			$email = "";
-			foreach ($userinfo as $u){
-				$link = $u['link'];
-				$username = $u['username'];
-				$email = $u['email'];
-			}
-			
-			echo "
-			<div>
-				<img src='".$link."'/><br/>
-				Name: ".$username." <br/>
-				Email: ".$email."
-			</div>	
-			";
 		break;
 	}
 }
