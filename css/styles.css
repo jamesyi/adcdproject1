@@ -475,10 +475,7 @@ textarea{
 }
 
 #user_album_list{
-	width:70%;
-	position:absolute;
-	top:0;
-	right:0;
+	
 }
 
 #user_album_list ul li a img{
@@ -504,4 +501,61 @@ textarea{
 #example_users ul li a img{
 	height:200px;
 	width:200px;
+}
+
+
+.custom-md-3{
+		padding:0;
+	}
+	.thumbnail>img,.thumbnail a>img{
+	width:100%;
+}
+#myCarousel{
+	margin-bottom:0;
+}
+
+.thumbnail{
+	border:none;
+	margin-bottom:0;
+	padding:0px;
+}
+
+body{
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+
+
+.caption {
+    position:absolute;
+    top:0;
+    right:0;
+    background:rgba(0, 0, 0, 0.75);
+    width:100%;
+    height:100%;
+    padding:2%;
+    display: none;
+    text-align:center;
+    color:#fff !important;
+    z-index:2;
+}
+.span-custom{
+	position:relative;
+	font-size:2em;
+	
+	padding:8px;
+	top:50%;
+	transition:0.5s;
+}
+
+.span-custom:hover{
+	transition:0.5s;
+	border-radius:30px;
+
+	
+}
+
+.caption a{
+	text-decoration:none;
+	color:white;
 }

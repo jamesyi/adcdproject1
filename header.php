@@ -7,6 +7,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script src="js/nice.js"></script>
 <script src='js/smooth-scroll.js'></script>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/carousel.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 

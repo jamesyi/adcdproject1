@@ -12,7 +12,11 @@
 	</ul>
     <h1 class="developer-names">&copy;2014 James Yi, Leo Tse, Clark Yao</h1>
 </div>
+
 </body>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/docs.min.js"></script>
+
 <script>
 function logout(){
 	window.location="/moretofu/server/logout.php";
@@ -59,7 +63,7 @@ $(document).ready(function(){
 	
 	//show user's albums on albums creation page
 	$.get("data.php", {data:1}, function(data){
-		$("#user_album_list ul").html(data);
+		$("#user_album_list").html(data);
 		$(".userAlbum").click(function(){
 			var aid = $(this).attr("id");
 			var name = $(this).attr("rel");
@@ -69,18 +73,19 @@ $(document).ready(function(){
 	
 	//show pictures of the album
 	$.get("data.php", {data:2, aid:$("#album_id").val()}, function(data){
-		$("#user_img_list ul").html(data);
+		$("#user_img_list").html(data);
 	});
 	
 	//show all albums on cosplayers page
 	$.get("data.php", {data:3}, function(data){
-		//console.log(data);
-		$("#all_cosplayers_albums ul").html(data);
-	});
-	
-	//show user data on profile settings page
-	$.get("data.php", {data:4}, function(data){
 		console.log(data);
+		$("#all_cosplayers_albums").html(data);
+	});
+
+});
+</script>
+
+</html>le.log(data);
 		$("#user_profile").html(data);
 	});
 
