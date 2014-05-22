@@ -17,7 +17,9 @@ if (isset($_GET['success']) && ($_GET['success'] == true)){
 }
 ?>
 
+<div id="album_creation_form">
 <?php include("albumCreationForm.php");?>
+</div>
 
 <div id='user_album_list'>
 	<ul>

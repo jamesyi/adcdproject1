@@ -26,7 +26,7 @@ CREATE TABLE `albums` (
   `link` text NOT NULL,
   `descr` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT ;
 
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE `album_picture` (
   PRIMARY KEY (`id`),
   KEY `album_id` (`album_id`),
   KEY `picture_id` (`picture_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT ;
 
 
 -- --------------------------------------------------------
@@ -57,7 +57,7 @@ CREATE TABLE `pictures` (
   `link` text NOT NULL,
   `descr` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT ;
 
 
 -- --------------------------------------------------------
@@ -73,7 +73,7 @@ CREATE TABLE `users` (
   `email` varchar(64) NOT NULL,
   `link` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT ;
 
 
 -- --------------------------------------------------------
@@ -89,7 +89,7 @@ CREATE TABLE `user_album` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `album_id` (`album_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT ;
 
 
 -- --------------------------------------------------------
@@ -105,7 +105,7 @@ CREATE TABLE `user_picture` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `picture_id` (`picture_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT ;
 
 --
 -- Constraints for dumped tables

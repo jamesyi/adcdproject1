@@ -45,6 +45,11 @@ if(isset($_GET['data'])){
 				echo "<li><img src='".$link."' width='200' height='200' id='".$id."' class='cosplayAlbums' rel='".$title."'/><br/>".$title." ".$descr."</li>";
 			}
 		break;
+		
+		case 4:
+			$uid = $_SESSION['user_id'];
+			$user->show_user_by_id($uid);
+		break;
 	}
 }
 ?>

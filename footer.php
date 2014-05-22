@@ -74,8 +74,14 @@ $(document).ready(function(){
 	
 	//show all albums on cosplayers page
 	$.get("data.php", {data:3}, function(data){
-		console.log(data);
+		//console.log(data);
 		$("#all_cosplayers_albums ul").html(data);
+	});
+	
+	//show user data on profile settings page
+	$.get("data.php", {data:4}, function(data){
+		console.log(data);
+		$("#user_profile").html(data);
 	});
 
 });

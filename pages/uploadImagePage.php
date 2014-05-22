@@ -26,7 +26,9 @@ if (isset($_GET['success']) && ($_GET['success'] == true)){
 }
 ?>
 
+<div id="img_upload_form">
 <?php include("imageUploadForm.php");?>
+</div>
 
 <div id='user_img_list'>
 	<ul>

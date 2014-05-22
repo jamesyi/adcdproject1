@@ -56,6 +56,12 @@ if (empty($_POST['title']) && empty($_POST['descr']) && empty($_FILES['picture']
 	$new_filename = $id.".".$extension;
 	rename($filename, $new_filename);
 	
+	//create root folder - "uploads"
+	$root_folder = "../uploads/";
+	if(!file_exists($root_folder)){
+		mkdir($root_folder, 0777);
+	}
+	
 	//create album folder under uploads for each user, folder named after user id
 	$dir_path1 = "../uploads/".$_POST['user_session_id']."/";
 	$dir_path2 = $dir_path1."pictures/";

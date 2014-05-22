@@ -13,8 +13,9 @@ if(empty($_SESSION['username'])){
 ?>
 
 <div id='user_profile'>
-	<img src='images/4-2.jpg' class='profile_img' />
-    <br/>Name: Doge
-    <br/>Birthday: Everyday
-    <br/>Hobby: More Tofu
+	
+</div>
+
+<div id='user_profile_form'>
+	
 </div>

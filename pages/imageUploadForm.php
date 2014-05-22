@@ -1,4 +1,3 @@
-<div id="img_upload_form">
 <h1>Upload an image to <?php echo $_GET['albumName'];?>:</h1>
 <form action="../moretofu/server/picture_client.php" method="post" enctype="multipart/form-data">
 
@@ -58,4 +57,3 @@ Album Description: <br/>
 <input type="submit" name="Submit" value="Upload" id="create_album"/>
 
 </form>
-</div>
