@@ -93,8 +93,8 @@ if(isset($_GET['data'])){
 				$username = $userinfo['username'];
 				$email = $userinfo['email'];
 				echo "
-					Name: ".$username."<br/>
-					Email: ".$email."
+					Name: <span style='color:#E84D5B;'>".$username."</span><br/>
+					Email: <span style='color:#E84D5B;'>".$email."</span>
 				";
 			}
 		break;

@@ -6,7 +6,7 @@
 	$albuminfo = $db->show_album_by_id($_GET['aid']);
 	foreach($albuminfo as $ai){
 		$link = $ai['link'];
-		echo "<img src='".$link."' width='250' height='250'/>";
+		echo "<img  src='".$link."' width='250' height='250'/>";
 		break;
 	}
 ?>
@@ -59,7 +59,7 @@
 
 
 
-<textarea name="descr" type="text" placeholder="Album Description" id="descr" value="<?php if (isset($_GET['descr'])){echo $_GET['descr'];} ?>" class="input" rows="5" maxlength="1000"></textarea>
+<textarea name="descr" type="text" placeholder="Image Description" id="descr" value="<?php if (isset($_GET['descr'])){echo $_GET['descr'];} ?>" class="input" rows="6" maxlength="1000"></textarea>
 <?php
 	if (isset($_GET['error']) && ($_GET['error'] == 1)){
 		echo "<div id='error'>Please give your image a description.</div>";

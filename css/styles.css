@@ -58,12 +58,12 @@ h1{
 
 #user ul li{
 	display:inline-block;
-	font-size:1.2em;
+	font-size:1.5em;
 	text-decoration:none;
 	color:white;
 	background-color:#2a2a2a;
 	padding:10px 20px 10px 20px;
-	
+	margin-top:10px;
 	transition-duration:0.3s;
 	opacity:0.7;
 }
@@ -75,19 +75,21 @@ h1{
 	color:white;
 	background-color:#2a2a2a;
 	padding:5px 10px 5px 10px;
-	border-radius:5px;
+	border-radius:0px;
 	transition-duration:0.3s;
 	opacity:0.7;
+	margin-top:10px;
 }
 
 #user_section ul li a{
-	font-size:1.2em;
+	font-size:1.5em;
 	text-decoration:none;
 	color:white;
+	
 }
 
 #user_section ul li a:hover{
-	color:yellow;
+	color:#E84D5B;
 }
 
 #gear-container{
@@ -98,7 +100,7 @@ h1{
 	text-decoration:none;
 	background-color:#2a2a2a;
 	padding:10px 5px 10px 5px;
-	border-radius:5px;
+	border-radius:0px;
 	transition-duration:0.3s;
 	opacity:1;
 }
@@ -124,18 +126,19 @@ h1{
 }
 
 #dropdown_menu ul{
+	margin-top:-7px;
 	list-style:none;
-	font-size:1.2em;
+	font-size:1.5em;
 	background-color:#2a2a2a;
 
 	transition-duration:0.3s;
 	opacity:0.7;
 	padding:10px;
-	margin-top:-12px;
+	
 }
 
 #dropdown_menu ul li{
-	width:114px;
+	
 }
 
 #dropdown_menu ul li a{
@@ -145,7 +148,7 @@ h1{
 }
 
 #dropdown_menu ul li a:hover{
-	color:yellow;
+	color:#E84D5B;;
 }
 
 /*=======================================
@@ -238,6 +241,7 @@ h1{
 	left:0;
 	z-index:999;
 	
+	
 }
 
 .developer-names{
@@ -250,14 +254,14 @@ h1{
 }
 
 .selection{
-	margin-top:15px;
+	margin-top:10px;
 	margin-left:7%;
 }
 
 .selection a{
 	text-decoration:none;
 	color:white;
-	font-size:1.2em;	
+	font-size:1.5em;	
 	padding-right:60px;
 }
 
@@ -563,6 +567,9 @@ body{
 .album-creation-style, .image-creation-style{
 	text-align:center;
 	z-index:999;
+	-webkit-box-shadow: 3px 0 10px -2px black;
+            box-shadow: 3px 0 10px -2px black;
+	
 }
 
 #picture{
@@ -618,3 +625,5 @@ body{
 #search-field{
 	width:200px;
 }
+
+

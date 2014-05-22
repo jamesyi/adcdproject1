@@ -33,7 +33,7 @@ if (isset($_GET['success']) && ($_GET['success'] == "e")){
 
 ?>
 
-<div id='user_profile'>
+<div style="text-align:center;margin-bottom:0; padding-top:80px;font-size:1.5em;" id='user_profile'>
 	
 </div>
 

@@ -7,6 +7,23 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script src="js/nice.js"></script>
 <script src='js/smooth-scroll.js'></script>
+<script>
+var speed = 'slow';
+
+$('html, body').hide();
+$(document).ready(function() {
+    $('html, body').fadeIn(speed, function() {
+        $('a[href], button[href]').click(function(event) {
+            var url = $(this).attr('href');
+            if (url.indexOf('#') == 0 || url.indexOf('javascript:') == 0) return;
+            event.preventDefault();
+            $('html, body').fadeOut(speed, function() {
+                window.location = url;
+            });
+        });
+    });
+});
+</script>
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/carousel.css" rel="stylesheet">
@@ -23,7 +40,7 @@ if (isset($_SESSION['username'])) {
 	echo "
 	<div id='user'>
 		<ul>
-			<li>Welcome, ".$_SESSION['username']."</li> 
+			<li>Welcome,<span style='color:#E84D5B;'> ".$_SESSION['username']."</span></li> 
 			<li id='gear-container'><a><img id='gear-pic' src='images/gear.png'></a></li>
 		</ul>
 	</div>

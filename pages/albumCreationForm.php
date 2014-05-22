@@ -47,7 +47,7 @@
 
 
 
-<textarea name="descr" type="text" id="descr" placeholder="Album Description" value="<?php if (isset($_GET['descr'])){echo $_GET['descr'];} ?>" class="input" rows="10" maxlength="1000"></textarea>
+<textarea name="descr" type="text" id="descr" placeholder="Album Description" value="<?php if (isset($_GET['descr'])){echo $_GET['descr'];} ?>" class="input" rows="7" maxlength="1000"></textarea>
 <?php
 	if (isset($_GET['error']) && ($_GET['error'] == 1)){
 		echo "<div id='error'>Please give your image a description.</div>";
