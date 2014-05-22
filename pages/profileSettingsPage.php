@@ -17,5 +17,5 @@ if(empty($_SESSION['username'])){
 </div>
 
 <div id='user_profile_form'>
-	
+	<?php include("profileSettingsForm.php");?>
 </div>

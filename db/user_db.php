@@ -67,29 +67,17 @@ class User_db {
 	} 
 	
 	function get_user_by_username(){
-		$query = "SELECT * FROM users WHERE username='".$this->username."'";
+		$query = "SELECT * FROM users WHERE username='".$this->username."' AND password = '".$this->password."'";
 		$result = mysqli_query($this->connectDB, $query);
 		
-		$arr = array();
-		$name = "";
-		while ($row = mysqli_fetch_array($result)){
-			$name = $row['username'];
+		$arr    = array();
+		if($result){
+			while ($row = mysqli_fetch_array($result)){
+				$arr = $row;
+			}
 		}
-		return $name;
+		return $arr;
 	} 
-	
-	function get_user_id(){
-		$query = "SELECT * FROM users";
-		
-		$result = mysqli_query($this->connectDB, $query);
-		
-		$arr = array();
-		$id = "";
-		while ($row = mysqli_fetch_array($result)){
-			$id = $row['id'];	
-		}
-		return $id;
-	}
 	
 	function insert_new_user(){
 		$query = "INSERT INTO users (username, password, email) VALUES ( '".$this->username."', '".$this->password."', '".$this->email."')";

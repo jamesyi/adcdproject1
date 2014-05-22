@@ -18,14 +18,12 @@ class User {
 	function login_user($username, $password){
 		$this->userDB->set_user_username($username);
 		$this->userDB->set_user_password($password);
-		$username = $this->userDB->get_user_by_username();
-		$user_id = $this->userDB->get_user_id();
+		$user = $this->userDB->get_user_by_username();
 		if(!empty($username)){
 			session_start();
-			$_SESSION['username'] = $username;
-			$_SESSION['user_id'] = $user_id;
-			return $username;
-			return $user_id;
+			$_SESSION['username'] = $user['username'];
+			$_SESSION['user_id'] = $user['id'];
+			return $user;
 		}
 	}
 	
