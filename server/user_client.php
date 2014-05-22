@@ -36,24 +36,16 @@ if($_POST['mode'] == 3){
 	}
 	
 	$var = array_merge($id, $passwords, $email);
-	
+
 	if(!empty($passwords)){
 		$result = $user->check_password($var);
 		if ($result == true){ 
-			$user->update_user($var);
-			header('Content-type: application/json');
-    		echo json_encode("success");
+			return $user->update_user($var);
 		} else {
-			header('Content-type: application/json');
-    		echo json_encode("fail");
+			echo "Your password is not correct!";	
 		}
-	} else if (!empty($email) && empty($passwords)){
-		$user->update_user($var);
-		header('Content-type: application/json');
-    	echo json_encode("success");
-	} else if (empty($email) && empty($passwords)){
-		header('Content-type: application/json');
-    	echo json_encode("empty");
+	} else {
+		return $user->update_user($var);
 	}
 }
 

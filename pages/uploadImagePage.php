@@ -1,12 +1,6 @@
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<a href="index.php?page=albumCreation">Back to Album Creation</a>
 
+<!--<a href="index.php?page=albumCreation" style="z-index:999;">Back to Album Creation</a>
+-->
 <?php
 if(empty($_SESSION['username'])){
 	
@@ -26,11 +20,14 @@ if (isset($_GET['success']) && ($_GET['success'] == true)){
 }
 ?>
 
-<div id="img_upload_form">
+<div class="col-md-3 pull-left image-creation-style" id="img_upload_form">
 <?php include("imageUploadForm.php");?>
 </div>
 
-<div id='user_img_list'>
-	<ul>
-    </ul>
+<div class="col-md-9 pull-right" style="padding:0;">
+    <div class="container-fluid work-container">
+        <div class="row" id="user_img_list">
+        
+        </div>
+	</div>
 </div>

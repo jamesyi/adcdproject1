@@ -43,9 +43,9 @@ class User {
 	function check_password($data){
 		$id		   = $data['id'];
 		$password  = $data['password'];
-		$this->userDB->set_user_id($id);
-		$this->userDB->set_user_password($password);
-		return $this->userDB->get_user_by_id_and_password();
+		$this->user_db->set_id($id);
+		$this->user_db->set_password($password);
+		return $this->user_db->get_user_by_id_and_password();
 	}
 	
 	function update_user($data){
@@ -53,12 +53,12 @@ class User {
 		$password  = isset($data['password']) ? $data['password'] : NULL;
 		$new_password  = isset($data['new_password']) ? $data['new_password'] : NULL;
 		$email	   = isset($data['email']) ? $data['email'] : NULL;
-		$this->userDB->set_user_id($id);
-		$this->userDB->set_user_password($password);
-		$this->userDB->set_user_new_password($new_password);
-		$this->userDB->set_user_email($email);
+		$this->user_db->set_id($id);
+		$this->user_db->set_password($password);
+		$this->user_db->set_new_password($new_password);
+		$this->user_db->set_email($email);
 		
-		return $this->userDB->update_user();
+		return $this->user_db->update_user();
 
 	}
 }

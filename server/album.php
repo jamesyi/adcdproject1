@@ -43,6 +43,12 @@ class Album {
 		return $albums;
 	}
 	
+	function show_album_by_id($id){
+		$this->albumDB->set_album_id($id);
+		$albums = $this->albumDB->get_album_by_id();
+		return $albums;
+	}
+	
 	function validate_img_type(){
 		$valid_types = array("image/jpg", "image/jpeg", "image/png");
 		$type = $_FILES['picture']['type'];

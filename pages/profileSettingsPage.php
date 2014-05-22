@@ -10,23 +10,9 @@ if(empty($_SESSION['username'])){
 	exit();
 }
 
-if (isset($_GET['success']) && ($_GET['success'] == "t")){
+if (isset($_GET['success']) && ($_GET['success'] == true)){
 	
 	$message = "Profile Updated!";
-	
-	echo "<script type='text/javascript'>alert('$message');</script>";
-}
-
-if (isset($_GET['success']) && ($_GET['success'] == "f")){
-	
-	$message = "Old password is not correct!";
-	
-	echo "<script type='text/javascript'>alert('$message');</script>";
-}
-
-if (isset($_GET['success']) && ($_GET['success'] == "e")){
-	
-	$message = "Fields are empty!";
 	
 	echo "<script type='text/javascript'>alert('$message');</script>";
 }

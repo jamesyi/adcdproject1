@@ -58,17 +58,11 @@ $(document).ready(function(){
 		});
 	});
 	
-	$("#edit-user").click(function(){
-		$.post("server/user_client.php", {mode:3, id:$("#user_id").val(), new_password:$("#new-password").val(), password:$("#old-password").val(), email:$("#user-email").val()}, function(data){
-			var result = data;
-			console.log(data);
-			if(result == "success"){
-				window.location.replace("index.php?page=profile&success=t");
-			} else if(result == "fail"){
-				window.location.replace("index.php?page=profile&success=f");
-			} else if(result == "empty"){
-				window.location.replace("index.php?page=profile&success=e");
-			}
+	$("#edit_user").click(function(){
+		$.post("server/user_client.php", {mode:3, new_password:$("#new-password").val(), password:$("#old-password").val(), email:$("#user-email").val()}, function(data){
+			//console.log(data);	
+			var user1 = $.parseJSON(data);
+			window.location.replace("index.php?page=profile?success=true");
 		});
 	});
 	
@@ -95,12 +89,28 @@ $(document).ready(function(){
 	//show pictures of the album
 	$.get("data.php", {data:2, aid:$("#album_id").val()}, function(data){
 		$("#user_img_list").html(data);
+		$("[rel='tooltip']").tooltip();    
+ 	
+		$('.thumbnail').hover(function(){
+				$(this).find('.caption').stop().fadeIn(180); //.fadeIn(250)
+			}, function(){
+				$(this).find('.caption').stop().fadeOut(180); //.fadeOut(205)
+			}
+		); 
 	});
 	
 	//show all albums on cosplayers page
 	$.get("data.php", {data:3}, function(data){
 		//console.log(data);
 		$("#all_cosplayers_albums").html(data);
+		$("[rel='tooltip']").tooltip();    
+ 	
+		$('.thumbnail').hover(function(){
+				$(this).find('.caption').stop().fadeIn(180); //.fadeIn(250)
+			}, function(){
+				$(this).find('.caption').stop().fadeOut(180); //.fadeOut(205)
+			}
+		); 
 	});
 	
 	//show user info

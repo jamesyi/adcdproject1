@@ -45,7 +45,19 @@ if(isset($_GET['data'])){
 				$id = $p['picture_id'];
 				$descr = $p['descr'];
 				$title = $p['title'];
-				echo "<div><img src='".$link."'  width='350' height='350' id='".$id."' class='albumPicture' rel='".$title."'/><br/>".$title." ".$descr."</div>";
+				echo "
+				<div class='col-md-3 custom-md-3' >
+					<div class='thumbnail'>
+						<div class='caption' id='".$id."' rel='".$title."'>
+							<a href='#'><span class='span-custom'>".$title."<br/><span style='color:#E64C66; font-size:0.8em;'>".$descr."</span></span></a>
+							
+						</div>
+					
+					
+						<img class='works-image' src='".$link."' width='350' height='350' />
+					</div>
+				</div>
+				";
 			}
 		break;
 		
@@ -56,7 +68,19 @@ if(isset($_GET['data'])){
 				$id = $a['id'];
 				$descr = $a['descr'];
 				$title = $a['title'];
-				echo "<div><img src='".$link."' style='width:350px;height:350px;'  id='".$id."' class='cosplayAlbums' rel='".$title."'/><br/>".$title." ".$descr."</div>";
+				echo "
+				<div class='col-md-3 custom-md-3' >
+					<div class='thumbnail'>
+						<div class='caption' id='".$id."' rel='".$title."'>
+							<a href='#'><span class='span-custom'>".$title."<br/><span style='color:#E64C66; font-size:0.8em;'>".$descr."</span></span></a>
+							
+						</div>
+					
+					
+						<img class='works-image' src='".$link."' width='350' height='350' />
+					</div>
+				</div>
+				";
 			}
 		break;
 		

@@ -1,9 +1,19 @@
+
+
 <h1>Create an album:</h1>
 <form action="../moretofu/server/album_client.php" method="post" enctype="multipart/form-data">
 
-Select an album cover image: <br/>
+<p style="font-size:1.3em;">Select an album cover image:</p><br/>
 
-<input name="picture" type="file" id="picture"><br/>
+
+
+
+<button type="button" class="btn btn-primary album-upload-button" onclick="document.getElementById('picture').click();"><p><span class="glyphicon glyphicon-folder-open">&nbsp;</span> Choose A File</p></button>
+<div id="upload-wrap">
+
+<input name="picture" type="file" id="picture">
+
+</div><br/>
 <?php
 	if (isset($_GET['error']) && ($_GET['error'] == 1)){
 		echo "<div id='error'>Please choose an image file.</div>";
@@ -20,9 +30,9 @@ Select an album cover image: <br/>
 	} 
 ?>
 
-Album Title: <br/>
 
-<input name="title" type="text" id="title" class="input" value="<?php if (isset($_GET['title'])){echo $_GET['title'];} ?>"/><br/>
+
+<input name="title" type="text" placeholder="Album Title"id="title" class="input" value="<?php if (isset($_GET['title'])){echo $_GET['title'];} ?>"/><br/>
 <?php
 	if (isset($_GET['error']) && ($_GET['error'] == 1)) {
 		echo "<div id='error'>Please give your image a title.</div>";
@@ -35,9 +45,9 @@ Album Title: <br/>
 	} 
 ?>
 
-Album Description: <br/>
 
-<textarea name="descr" type="text" id="descr" value="<?php if (isset($_GET['descr'])){echo $_GET['descr'];} ?>" class="input" rows="10" maxlength="1000"></textarea>
+
+<textarea name="descr" type="text" id="descr" placeholder="Album Description" value="<?php if (isset($_GET['descr'])){echo $_GET['descr'];} ?>" class="input" rows="10" maxlength="1000"></textarea>
 <?php
 	if (isset($_GET['error']) && ($_GET['error'] == 1)){
 		echo "<div id='error'>Please give your image a description.</div>";
@@ -52,6 +62,6 @@ Album Description: <br/>
 
 <br/>
 <input name="user_session_id" id="user_session_id" type="hidden" value="<?php echo $_SESSION['user_id']; ?>"/>
-<input type="submit" name="Submit" value="Upload" id="create_album"/>
+<input type="submit" name="Submit" value="Upload" class="btn btn-danger" id="create_album"/>
 
 </form>

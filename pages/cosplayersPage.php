@@ -1,4 +1,8 @@
-<h1>Cosplayers</h1>
-<div id='all_cosplayers_albums'>
-	<ul></ul>
+
+<div class="col-lg-12 " style="padding:0;">
+    <div class="container-fluid work-container">
+        <div class="row" id='all_cosplayers_albums'>
+        
+        </div>
+	</div>
 </div>
