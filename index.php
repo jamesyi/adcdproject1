@@ -14,10 +14,6 @@ if (isset($_GET["page"])) {
 			include("pages/cosplayersPage.php");
 		break;
 			
-		case "publicImages":
-			include("pages/publicImagesPage.php");
-		break;
-			
 		case "profile":
 			include("pages/profileSettingsPage.php");
 		break;
