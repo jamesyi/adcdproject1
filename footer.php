@@ -64,7 +64,7 @@ $(document).ready(function(){
 	//show user's albums on albums creation page
 	$.get("data.php", {data:1}, function(data){
 		$("#user_album_list").html(data);
-		$(".userAlbum").click(function(){
+		$(".works-image").click(function(){
 			var aid = $(this).attr("id");
 			var name = $(this).attr("rel");
 			window.location.replace("index.php?page=uploadImage&aid="+aid+"&albumName="+name);
@@ -78,14 +78,12 @@ $(document).ready(function(){
 	
 	//show all albums on cosplayers page
 	$.get("data.php", {data:3}, function(data){
-		console.log(data);
+		//console.log(data);
 		$("#all_cosplayers_albums").html(data);
 	});
-
-});
-</script>
-
-</html>le.log(data);
+	
+	$.get("data.php", {data:4}, function(data){
+		console.log(data);
 		$("#user_profile").html(data);
 	});
 

@@ -28,5 +28,10 @@ class User {
 			return $user_id;
 		}
 	}
+	
+	function show_user_by_id($id){
+		$this->userDB->set_user_id($id);
+		return $this->userDB->get_user_by_id();
+	}
 }
 ?>

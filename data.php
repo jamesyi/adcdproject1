@@ -11,7 +11,7 @@ if(isset($_GET['data'])){
 	$album = new Album();
 	$user = new User();
 	switch ($_GET['data']){
-		case 1: //list all user's albums for profile settings page
+		case 1: //list all user's albums for album creation page
 			$uid = $_SESSION['user_id'];
 			$album_covers = $album->show_album_by_uid($uid);
 			
@@ -58,6 +58,11 @@ if(isset($_GET['data'])){
 				$title = $a['title'];
 				echo "<div><img src='".$link."' width='350' height='350' id='".$id."' class='cosplayAlbums' rel='".$title."'/><br/>".$title." ".$descr."</div>";
 			}
+		break;
+		
+		case 4:
+			$uid = $_SESSION['user_id'];
+			$userinfo = $user->show_user_by_id($uid);
 		break;
 	}
 }
