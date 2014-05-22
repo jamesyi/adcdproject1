@@ -4,15 +4,15 @@ if (isset($_GET["page"])) {
 	switch ($_GET["page"]) {
 		case "register":
 			include("pages/registerPage.php");
-			break;
+		break;
 			
 		case "login":
 			include("pages/loginPage.php");
-			break;
+		break;
 			
 		case "cosplayers":
 			include("pages/cosplayersPage.php");
-			break;
+		break;
 			
 		case "profile":
 			include("pages/profileSettingsPage.php");
@@ -26,17 +26,13 @@ if (isset($_GET["page"])) {
 			include("pages/uploadImagePage.php");
 		break;
 			
-		case "userProfile":
-			include("pages/profilePage.php");
-			break;
-			
 		case "about":
 			include("pages/aboutPage.php");
-			break;
+		break;
 		
 		case "home":
 			include("pages/homePage.php");
-			break;
+		break;
 	}
 } else {
 	include("pages/homePage.php");

@@ -32,8 +32,9 @@ class Picture {
 		return $picture_id;
 	}
 	
-	function show_all_pictures(){
-		
+	function show_picture_by_id($id){
+		$this->pictureDB->set_picture_id($id);
+		return $this->pictureDB->get_picture_by_id();
 	}
 	
 	function update_picture_link($id, $link){
